@@ -1,0 +1,17 @@
+1. Adding data (category)
+
+INSERT INTO `shop`.`category` (`id`, `name`, `discount`) VALUES ('1', 'Женская одежда', '5');
+INSERT INTO `shop`.`category` (`id`, `name`, `discount`) VALUES ('2', 'Мужская одежда', '0');
+
+ALTER TABLE `shop`.`category` 
+ADD COLUMN `alias_name` VARCHAR(128) NULL AFTER `discount`;
+
+INSERT INTO category (id, name, discount, alias_name) VALUES (3, 'Женская обувь', 10, NULL);
+INSERT INTO category (id, name, discount, alias_name) VALUES (4, 'Мужская обувь', 15, 'man''s shoes');
+
+2. Auto Increment ID
+
+ALTER TABLE `shop`.`category` 
+CHANGE COLUMN `id` `id` INT(11) NOT NULL AUTO_INCREMENT ;
+
+INSERT INTO category (name, discount) VALUES ('Шляпы', 0);
