@@ -28,3 +28,15 @@ DROP DATABASE `shop`
 show databases;
 use shop;
 show colums category;
+
+7. Homework
+
+CREATE TABLE `shop`.`brand` (
+  `id` INT NOT NULL,
+  `name` VARCHAR(128) NOT NULL,
+  PRIMARY KEY (`id`));
+
+CREATE TABLE `shop`.`product_type` (
+  `id` INT NOT NULL,
+  `name` VARCHAR(128) NOT NULL,
+  PRIMARY KEY (`id`));
