@@ -1,0 +1,34 @@
+1. Get data from table
+
+USE shop;
+
+-- == SELECT == --
+-- Print all categories of goods
+SELECT * FROM category;
+
+2. Filtration with WHERE
+
+-- == WHERE == --
+-- Print categories of goods if id = 3
+SELECT * FROM category WHERE id = 3;
+
+-- Print categories of goods if discount <> 0
+SELECT * FROM category WHERE discount <> 0;
+
+-- Print categories of goods if discount > 5
+SELECT * FROM category WHERE discount > 5;
+
+-- Print categories of goods if discount > 5 and < 15
+SELECT * FROM category WHERE (discount > 5) AND (discount < 15);
+
+-- Print categories of goods if discount < 5 or >=10
+SELECT * FROM category WHERE (discount < 5) OR (discount >= 10);
+
+-- Print categories of goods if discount not < 5
+SELECT * FROM category WHERE NOT (discount < 5);
+
+-- Print categories of goods if alias exists
+SELECT * FROM category WHERE alias_name IS NOT NULL;
+
+-- Print categories of goods if alias not exists
+SELECT * FROM category WHERE  alias_name IS NULL;
