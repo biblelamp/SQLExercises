@@ -15,3 +15,18 @@ ALTER TABLE `shop`.`category`
 CHANGE COLUMN `id` `id` INT(11) NOT NULL AUTO_INCREMENT ;
 
 INSERT INTO category (name, discount) VALUES ('Ўл€пы', 0);
+
+3. Homework
+
+ALTER TABLE `shop`.`brand` 
+CHANGE COLUMN `id` `id` INT(11) NOT NULL AUTO_INCREMENT ;
+
+INSERT INTO `shop`.`brand` (`name`) VALUES ('Marc O\'Polo');
+INSERT INTO `shop`.`brand` (`name`) VALUES ('ALCOTT');
+INSERT INTO `shop`.`brand` (`name`) VALUES ('GUESS');
+
+ALTER TABLE `shop`.`product_type` 
+CHANGE COLUMN `id` `id` INT(11) NOT NULL AUTO_INCREMENT ;
+
+INSERT INTO `shop`.`product_type` (`name`) VALUES ('ѕлатье');
+INSERT INTO `shop`.`product_type` (`name`) VALUES ('‘утболка');
