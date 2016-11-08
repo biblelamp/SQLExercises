@@ -1,0 +1,36 @@
+1. Display a data from table
+
+-- == SELECT <column> == --
+-- display the names of all categories of goods
+SELECT name FROM category;
+
+-- display the names and discounts
+SELECT discount, name FROM category;
+
+-- display only discounts
+SELECT discount FROM category;
+
+2. Filtering and sorting
+
+-- DISTINCT
+-- print unique discounts
+SELECT DISTINCT discount FROM category;
+
+-- == ORDER BY == --
+-- sort by discounts in direct order
+SELECT * FROM category ORDER BY discount; -- ASC;
+
+-- == ORDER BY == --
+-- sort by discounts in reverse
+SELECT * FROM category ORDER BY discount DESC;
+
+-- == ORDER BY == --
+-- combine sorting and filtering
+SELECT * FROM category WHERE discount <> 0 ORDER BY discount DESC;
+
+-- == LIMIT == --
+-- print the first two categories of goods
+SELECT * FROM category LIMIT 2;
+
+-- combine with other conditions
+SELECT * FROM category WHERE discount <> 0 LIMIT 2;
