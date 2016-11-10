@@ -34,3 +34,14 @@ SELECT * FROM category LIMIT 2;
 
 -- combine with other conditions
 SELECT * FROM category WHERE discount <> 0 LIMIT 2;
+
+3. Homework
+
+-- print brand's name with id = 3
+SELECT name FROM brand WHERE id = 3;
+
+-- print first two type of goods
+SELECT * FROM product_type LIMIT 2;
+
+-- print all category of goods discount < 10% and sort by name
+SELECT * FROM category where discount < 10 ORDER BY name;
