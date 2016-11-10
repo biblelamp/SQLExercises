@@ -23,7 +23,7 @@ UPDATE category set alias_name = 'man''s clothing' WHERE id = 2;
 UPDATE category set alias_name = 'women''s shoes' WHERE id = 3;
 
 -- to add new brand ´Aunt Klava Companyª
-INSERT INTO category (name, discount) VALUES ('“ÂÚˇ  Î‡‚‡ Company', 0);
+INSERT INTO brand (name) VALUES ('Aunt Klava Company');
 
--- delete this brand (id = 6)
-DELETE FROM category WHERE id = 6;
+-- delete this brand
+DELETE FROM brand WHERE id = 4;
