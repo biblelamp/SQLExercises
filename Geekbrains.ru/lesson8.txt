@@ -1,0 +1,16 @@
+1. Update
+
+-- change category name
+UPDATE category SET name = 'Головные уборы' WHERE id = 5;
+
+-- check update
+SELECT * FROM category;
+
+-- change discount where discount = 0
+-- UPDATE category SET discount = 3 WHERE discount = 0 -- bad idea
+UPDATE category SET discount = 3 WHERE id IN (2, 5);
+
+2. Delete
+
+-- delete row from table category
+DELETE FROM category WHERE id = 5;
