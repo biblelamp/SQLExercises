@@ -1,0 +1,11 @@
+1. Create table 'product'
+
+CREATE TABLE `shop`.`product` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `brand_id` INT NOT NULL,
+  `product_type_id` INT NOT NULL,
+  `category_id` INT NOT NULL,
+  `price` DECIMAL(10,2) NOT NULL,
+  PRIMARY KEY (`id`));
+
+INSERT INTO product (brand_id, product_type_id, category_id, price) VALUES (1, 1, 1, 15980);
