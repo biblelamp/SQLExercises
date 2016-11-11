@@ -1,0 +1,23 @@
+1. Composite Primary Key
+
+ALTER TABLE `shop`.`order_products` 
+DROP PRIMARY KEY,
+ADD PRIMARY KEY (`order_id`, `product_id`);
+
+2. Add Foreign Keys
+
+ALTER TABLE `shop`.`order_products` 
+ADD CONSTRAINT `fk_order_products_order`
+  FOREIGN KEY (`order_id`)
+  REFERENCES `shop`.`order` (`id`)
+  ON DELETE NO ACTION
+  ON UPDATE NO ACTION;
+
+ALTER TABLE `shop`.`order_products` 
+ADD INDEX `fk_order_products_products_idx` (`product_id` ASC);
+ALTER TABLE `shop`.`order_products` 
+ADD CONSTRAINT `fk_order_products_products`
+  FOREIGN KEY (`product_id`)
+  REFERENCES `shop`.`product` (`id`)
+  ON DELETE NO ACTION
+  ON UPDATE NO ACTION;
