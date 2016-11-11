@@ -1,0 +1,19 @@
+1. New table 'order'
+
+CREATE TABLE `shop`.`order` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `user_name` VARCHAR(128) NOT NULL,
+  `phone` VARCHAR(32) NOT NULL,
+  `datetime` DATETIME NOT NULL,
+  PRIMARY KEY (`id`));
+
+INSERT INTO shop.`order` (user_name, phone, datetime) VALUES ('Василий','555-55-55','2016-11-11 15:00');
+SELECT * FROM shop.`order`;
+
+2. New table 'order_products'
+
+CREATE TABLE `shop`.`order_products` (
+  `order_id` INT NOT NULL,
+  `product_id` INT NOT NULL,
+  `count` INT NOT NULL,
+  PRIMARY KEY (`order_id`));
