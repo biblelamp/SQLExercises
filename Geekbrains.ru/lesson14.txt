@@ -26,3 +26,11 @@ select product.id, brand.name, product_type.name, category.name, product.price f
 	inner join category on product.category_id = category.id 
 	inner join brand on brand.id = product.brand_id
 	inner join product_type on product_type.id = product.product_type_id;
+
+2. Homework
+
+SELECT product.id, brand.name AS brand_name, product_type.name AS product_type, category.name AS category_name, product.price FROM product
+	INNER JOIN category on product.category_id = category.id 
+	INNER JOIN brand on brand.id = product.brand_id
+	INNER JOIN product_type on product_type.id = product.product_type_id
+	WHERE product_type.id = 2;
