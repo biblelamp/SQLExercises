@@ -1,0 +1,14 @@
+1. Full Outer Join / what to do in MySQL?
+
+SELECT * FROM product_type WHERE id = 1
+UNION
+SELECT * FROM product_type WHERE id = 2;
+
+SELECT * FROM `order`
+	LEFT JOIN order_products ON order_products.order_id = `order`.id
+	LEFT JOIN product ON order_products.product_id = product.id
+UNION
+SELECT * FROM `order`	
+	INNER JOIN order_products ON order_products.order_id = `order`.id
+	RIGHT JOIN product ON order_products.product_id = product.id
+	WHERE `order`.id IS NULL;
