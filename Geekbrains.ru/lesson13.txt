@@ -1,0 +1,8 @@
+1. Preparation for INNER JOIN
+
+USE shop;
+SELECT * FROM product;
+SELECT * FROM category WHERE id IN (1, 2, 3);
+
+SELECT * FROM product
+	INNER JOIN category ON product.category_id = category.id;
