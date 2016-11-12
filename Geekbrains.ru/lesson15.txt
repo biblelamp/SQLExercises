@@ -1,0 +1,18 @@
+1. Left Join
+
+SELECT * FROM category
+	INNER JOIN product on product.category_id = category.id;
+
+-- print all records of category and crossing records from product
+SELECT * FROM category
+	LEFT JOIN product on product.category_id = category.id;
+
+-- print record(s) which don't have connect with product
+SELECT category.* FROM category
+	LEFT JOIN product on product.category_id = category.id;
+	WHERE product.id IS NULL;
+
+-- get the same result as previous using right join
+SELECT category.* FROM product
+	RIGHT JOIN category on product.category_id = category.id
+	WHERE product.id IS NULL;
