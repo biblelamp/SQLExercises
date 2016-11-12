@@ -1,4 +1,4 @@
-1. Left Join
+1. Left/right Join
 
 SELECT * FROM category
 	INNER JOIN product on product.category_id = category.id;
@@ -16,3 +16,18 @@ SELECT category.* FROM category
 SELECT category.* FROM product
 	RIGHT JOIN category on product.category_id = category.id
 	WHERE product.id IS NULL;
+
+2. Homework
+
+INSERT INTO `shop`.`product_type` (`name`) VALUES ('иѓср');
+
+-- print all product type which we don't have in product
+SELECT product_type.* FROM product_type
+	LEFT JOIN product ON product.product_type_id = product_type.id
+	WHERE product.id IS NULL;
+
+-- print all products which we don't have in order
+SELECT product.* FROM `order`
+	INNER JOIN order_products ON order_products.order_id = `order`.id
+	RIGHT JOIN product ON order_products.order_id = product.id
+    WHERE `order`.id IS NULL;
