@@ -1,0 +1,19 @@
+1. Having
+
+SELECT `order`.user_name, max(price), count(*), sum(`count`) FROM `order` 
+	INNER JOIN order_products ON order_products.order_id = `order`.id
+	INNER JOIN product ON product.id = order_products.product_id
+	WHERE `order`.user_name LIKE 'Â%' -- filtering
+	GROUP BY `order`.user_name;
+
+SELECT `order`.user_name, max(price), count(*), sum(`count`) AS order_count FROM `order` 
+	INNER JOIN order_products ON order_products.order_id = `order`.id
+	INNER JOIN product ON product.id = order_products.product_id
+	WHERE `order`.user_name LIKE 'Â%' -- filtering
+	GROUP BY `order`.user_name
+	HAVING order_count >= 5;
+
+2. Index
+
+ALTER TABLE `shop`.`product` 
+ADD INDEX `price_index` (`price` ASC);
