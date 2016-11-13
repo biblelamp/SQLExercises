@@ -1,0 +1,23 @@
+1. Group By
+
+-- print rows with order
+SELECT `order`.user_name, price * `count` AS total_price FROM `order` 
+	INNER JOIN order_products ON order_products.order_id = `order`.id
+	INNER JOIN product ON product.id = order_products.product_id;
+
+-- print rows by user with sum of their orders
+SELECT `order`.user_name, sum(price * `count`) AS total_price FROM `order` 
+	INNER JOIN order_products ON order_products.order_id = `order`.id
+	INNER JOIN product ON product.id = order_products.product_id
+	GROUP BY `order`.user_name;
+
+-- print all rows in order
+SELECT * FROM `order` 
+	INNER JOIN order_products ON order_products.order_id = `order`.id
+	INNER JOIN product ON product.id = order_products.product_id;
+
+-- print only max price for all clients
+SELECT `order`.user_name, max(price), count(*), sum(`count`) FROM `order` 
+	INNER JOIN order_products ON order_products.order_id = `order`.id
+	INNER JOIN product ON product.id = order_products.product_id
+	GROUP BY `order`.user_name;
