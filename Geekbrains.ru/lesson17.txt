@@ -7,3 +7,15 @@ SELECT count(*) FROM product WHERE product.price < 10000;
 
 -- print sum of all goods, min and max price
 SELECT sum(price) AS total_price, min(price) AS min_price, max(price) AS max_price FROM product;
+
+2. Homework
+
+USE shop;
+
+INSERT INTO order_products (order_id, product_id, `count`) VALUES (2, 3, 2);
+INSERT INTO order_products (order_id, product_id, `count`) VALUES (2, 4, 3);
+
+SELECT sum(price * `count`) AS total_price FROM `order` 
+	INNER JOIN order_products ON order_products.order_id = `order`.id
+	INNER JOIN product ON product.id = order_products.product_id
+	WHERE `order`.id = 2;
