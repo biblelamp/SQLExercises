@@ -1,0 +1,24 @@
+1. Transaction
+
+CREATE TABLE `shop`.`user_bank_account` (
+  `id` INT NOT NULL,
+  `money` DECIMAL(10,2) NOT NULL,
+  `user_name` VARCHAR(45) NOT NULL,
+  PRIMARY KEY (`id`));
+
+INSERT INTO `shop`.`user_bank_account` (id, money, user_name) VALUES ('1', '100', 'Дмитрий');
+INSERT INTO `shop`.`user_bank_account` (id, money, user_name) VALUES ('2', '200', 'Евгений');
+
+SELECT * FROM `shop`.`user_bank_account`;
+
+-- send money from Дмитрий to Евгений
+START TRANSACTION;
+	UPDATE `shop`.`user_bank_account` SET money = money - 	100 WHERE id = 1;
+	UPDATE `shop`.`user_bank_account` SET money = money + 100 WHERE id = 2;
+COMMIT
+
+ACID:
+1. Atomicity -- атоммарность
+2. Consistency -- согласованность
+3. Isolation -- изолированность
+4. Durability -- долговечность
