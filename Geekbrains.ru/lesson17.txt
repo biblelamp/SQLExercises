@@ -1,0 +1,9 @@
+1. Aggregate Functions
+
+SELECT * FROM product;
+
+-- print count of records
+SELECT count(*) FROM product WHERE product.price < 10000;
+
+-- print sum of all goods, min and max price
+SELECT sum(price) AS total_price, min(price) AS min_price, max(price) AS max_price FROM product;
