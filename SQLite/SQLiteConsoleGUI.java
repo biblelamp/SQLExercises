@@ -7,18 +7,24 @@
  *  - see also http://www.tutorialspoint.com/sqlite/sqlite_java.htm
  *
  * @author Sergey Iryupin
- * @version 0.2 dated Apr 10, 2016
+ * @version 0.3 dated Apr 15, 2016
  */
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 import java.util.*;
 import java.sql.*;
+import java.io.*;
 
 class SQLiteConsoleGUI extends JFrame implements ActionListener, KeyListener {
 
     final String TITLE_OF_PROGRAM = "SQLite console";
+    final String MENU_NAME = "File";
+    final String MENU_OPEN = "Open...";
+    final String MENU_EXIT = "Exit";
     final String TITLE_BTN_ENTER = "Enter";
+    final String OPEN_OR_MAKE_BTN = "Open or make sqlile db";
+    final String OPEN_CMD = "open ";
     final int START_LOCATION = 200;
     final int WINDOW_WIDTH = 350;
     final int WINDOW_HEIGHT = 450;
@@ -43,6 +49,33 @@ class SQLiteConsoleGUI extends JFrame implements ActionListener, KeyListener {
         setTitle(TITLE_OF_PROGRAM);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setBounds(START_LOCATION, START_LOCATION, WINDOW_WIDTH, WINDOW_HEIGHT);
+        // menu: open and exit
+        JMenuBar menuBar = new JMenuBar();
+        JMenu fileMenu = new JMenu(MENU_NAME);
+        JMenuItem openItem = new JMenuItem(MENU_OPEN);
+        openItem.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                JFileChooser open = new JFileChooser(".");
+                open.setFileSelectionMode(JFileChooser.FILES_ONLY);
+                int result = open.showDialog(null, OPEN_OR_MAKE_BTN);
+                if (result == JFileChooser.APPROVE_OPTION) {
+                    File file = open.getSelectedFile();
+                    dialogue.append(SQLiteConsole.processCommand(
+                        OPEN_CMD + file.getName()) + "\n");
+                }
+            }
+        });
+        JMenuItem exitItem = new JMenuItem(MENU_EXIT);
+        exitItem.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                System.exit(0);
+            }
+        });
+        fileMenu.add(openItem);
+        fileMenu.addSeparator();
+        fileMenu.add(exitItem);
+        menuBar.add(fileMenu);
+        setJMenuBar(menuBar); // set menu
         // area for dialog
         dialogue = new JTextArea();
         dialogue.setLineWrap(true);
@@ -73,7 +106,8 @@ class SQLiteConsoleGUI extends JFrame implements ActionListener, KeyListener {
     public void actionPerformed(ActionEvent event) {
         if (command.getText().trim().length() > 0) {
             dialogue.append("# " + command.getText() + "\n");
-            dialogue.append(SQLiteConsole.processCommand(command.getText()) + "\n");
+            dialogue.append(
+                SQLiteConsole.processCommand(command.getText()) + "\n");
             if (!buffercmd.contains(command.getText())) {
                 buffercmd.add(command.getText());
                 pointer = buffercmd.size();
