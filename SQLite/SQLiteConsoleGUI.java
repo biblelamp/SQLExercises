@@ -7,7 +7,7 @@
  *  - see also http://www.tutorialspoint.com/sqlite/sqlite_java.htm
  *
  * @author Sergey Iryupin
- * @version 0.3 dated Apr 15, 2016
+ * @version 0.4 dated Apr 16, 2016
  */
 import java.awt.*;
 import java.awt.event.*;
@@ -19,9 +19,14 @@ import java.io.*;
 class SQLiteConsoleGUI extends JFrame implements ActionListener, KeyListener {
 
     final String TITLE_OF_PROGRAM = "SQLite console";
-    final String MENU_NAME = "File";
+    final String MENU_FILE = "File";
     final String MENU_OPEN = "Open...";
     final String MENU_EXIT = "Exit";
+    final String MENU_TEMPLATE = "Template";
+    final String MENU_CREATE_TABLE = "create table <tbl_name> (name type, ...)";
+    final String MENU_DROP_TABLE = "drop table <tbl_name>";
+    final String MENU_SELECT = "select * from <tbl_name>";
+    final String MENU_INSERT = "insert into <tbl_name> (lst_of_flds) values (lst_of_val)";
     final String TITLE_BTN_ENTER = "Enter";
     final String OPEN_OR_MAKE_BTN = "Open or make sqlile db";
     final String OPEN_CMD = "open ";
@@ -49,9 +54,9 @@ class SQLiteConsoleGUI extends JFrame implements ActionListener, KeyListener {
         setTitle(TITLE_OF_PROGRAM);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setBounds(START_LOCATION, START_LOCATION, WINDOW_WIDTH, WINDOW_HEIGHT);
-        // menu: open and exit
+        // menu/File: open and exit
         JMenuBar menuBar = new JMenuBar();
-        JMenu fileMenu = new JMenu(MENU_NAME);
+        JMenu fileMenu = new JMenu(MENU_FILE);
         JMenuItem openItem = new JMenuItem(MENU_OPEN);
         openItem.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
@@ -71,10 +76,26 @@ class SQLiteConsoleGUI extends JFrame implements ActionListener, KeyListener {
                 System.exit(0);
             }
         });
+        // menu/Template: create, drop, select, insert
+        JMenu templateMenu = new JMenu(MENU_TEMPLATE);
+        JMenuItem createTableItem = new JMenuItem(MENU_CREATE_TABLE);
+        createTableItem.addActionListener(this);
+        JMenuItem dropTableItem = new JMenuItem(MENU_DROP_TABLE);
+        dropTableItem.addActionListener(this);
+        JMenuItem selectItem = new JMenuItem(MENU_SELECT);
+        selectItem.addActionListener(this);
+        JMenuItem insertItem = new JMenuItem(MENU_INSERT);
+        insertItem.addActionListener(this);
+        // build menu
         fileMenu.add(openItem);
         fileMenu.addSeparator();
         fileMenu.add(exitItem);
+        templateMenu.add(createTableItem);
+        templateMenu.add(dropTableItem);
+        templateMenu.add(selectItem);
+        templateMenu.add(insertItem);
         menuBar.add(fileMenu);
+        menuBar.add(templateMenu);
         setJMenuBar(menuBar); // set menu
         // area for dialog
         dialogue = new JTextArea();
@@ -100,20 +121,23 @@ class SQLiteConsoleGUI extends JFrame implements ActionListener, KeyListener {
     }
 
     /**
-     * Listener of events from command field and enter button
+     * Listener of events from menu, command field and enter button
      */
     @Override
     public void actionPerformed(ActionEvent event) {
-        if (command.getText().trim().length() > 0) {
-            dialogue.append("# " + command.getText() + "\n");
+        String cmd = event.getActionCommand();
+        if (command.getText().trim().length() > 0 &&
+            command.getText().equals(cmd)) {
+            dialogue.append("# " + cmd + "\n");
             dialogue.append(
-                SQLiteConsole.processCommand(command.getText()) + "\n");
-            if (!buffercmd.contains(command.getText())) {
-                buffercmd.add(command.getText());
+                SQLiteConsole.processCommand(cmd) + "\n");
+            if (!buffercmd.contains(cmd)) {
+                buffercmd.add(cmd);
                 pointer = buffercmd.size();
             }
-        }
-        command.setText("");
+            command.setText("");
+        } else
+            command.setText(cmd);
         command.requestFocusInWindow();
     }
 
