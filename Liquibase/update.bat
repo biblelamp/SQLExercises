@@ -1,0 +1,1 @@
+liquibase --url=jdbc:mysql://localhost:3306/study --driver=org.mariadb.jdbc.Driver --username=root --password=root --changeLogFile=db.changelog-0.1.0.xml update
