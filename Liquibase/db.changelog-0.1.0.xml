@@ -1,0 +1,20 @@
+<databasechangelog
+  xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemalocation="http://www.liquibase.org/xml/ns/dbchangelog
+  http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-2.0.xsd">
+
+  <changeset id="1" author="mueller@synyx.de" runonchange="true"> 
+    <createtable tablename="Person"> 
+      <column autoincrement="true" name="id" type="BIGINT"> 
+        <constraints nullable="false" primarykey="true"> 
+        </constraints>
+      </column> 
+      <column name="name" type="VARCHAR(255)"> 
+        <constraints nullable="false"> 
+        </constraints>
+      </column> 
+    </createtable> 
+  </changeset>
+
+</databasechangelog>
