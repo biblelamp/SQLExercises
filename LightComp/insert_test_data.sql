@@ -4,11 +4,11 @@
 INSERT INTO archive
 	(code, name, local_name, archive_type, city, description, street, zipcode)
 VALUES
-	("100000030", "Archiv pro testování", "APT", "Archiv pro testování", "Praha 1", null, "Na Poříčí", "11000"),
-	("100000031", "Archiv pro testování", "APT", "Archiv pro testování", "Praha 1", null, "Na Poříčí", "11000"),
-	("100000032", "Archiv pro testování", "APT", "Archiv pro testování", "Praha 1", null, "Na Poříčí", "11000"),
-	("100000033", "Archiv pro testování", "APT", "Archiv pro testování", "Praha 1", null, "Na Poříčí", "11000"),
-	("100000034", "Archiv pro testování", "APT", "Archiv pro testování", "Praha 1", null, "Na Poříčí", "11000");
+	("100000030", "Archiv pro testování #1", "APT", "Archiv pro testování", "Praha 1", null, "Na Poříčí", "11000"),
+	("100000031", "Archiv pro testování #2", "APT", "Archiv pro testování", "Praha 1", null, "Na Poříčí", "11000"),
+	("100000032", "Archiv pro testování #3", "APT", "Archiv pro testování", "Praha 1", null, "Na Poříčí", "11000"),
+	("100000033", "Archiv pro testování #4", "APT", "Archiv pro testování", "Praha 1", null, "Na Poříčí", "11000"),
+	("100000034", "Archiv pro testování #5", "APT", "Archiv pro testování", "Praha 1", null, "Na Poříčí", "11000");
 
 
 -- DELETE FROM fund;
@@ -16,15 +16,15 @@ INSERT INTO fund
 	(code, name, archive_id, period_from, period_to, internal_code, status, accessibility, fund_size, conservation_status)
 VALUES
    ("100000010_352", "Administrace celních důchodků Praha", 1, "1805-01-01", "1830-12-31", "ACD", "Archivní soubory v přímé péči instituce, uložené v instituci", "Přístupný", "4,25 bm zpracováno (z toho 4,25 bm inventarizováno), 2,25 bm nezpracováno", "úplný"),
-	("100000030_121", "Fund pro testování", 1, "1920-01-01", "1935-12-31", "FPT", null, null, null, null),
-	("100000030_122", "Fund pro testování", 1, "1920-01-01", "1935-12-31", "FPT", null, null, null, null),
-	("100000030_123", "Fund pro testování", 1, "1920-01-01", "1935-12-31", "FPT", null, null, null, null),
-	("100000030_124", "Fund pro testování", 1, "1920-01-01", "1935-12-31", "FPT", null, null, null, null),
-	("100000030_125", "Fund pro testování", 1, "1920-01-01", "1935-12-31", "FPT", null, null, null, NULL),
-   ("100000030_126", "Fund pro testování", 1, "1920-01-01", "1935-12-31", "FPT", null, null, null, null),
-   ("100000030_126", "Fund pro testování", 1, "1920-01-01", "1935-12-31", "FPT", null, null, null, null),
-   ("100000030_126", "Fund pro testování", 1, "1920-01-01", "1935-12-31", "FPT", null, null, null, NULL);
-   
+	("100000030_121", "Fund pro testování #1", 1, "1920-01-01", "1935-12-31", "FPT", null, null, null, null),
+	("100000030_122", "Fund pro testování #2", 1, "1920-01-01", "1935-12-31", "FPT", null, null, null, null),
+	("100000030_123", "Fund pro testování #3", 2, "1920-01-01", "1935-12-31", "FPT", null, null, null, null),
+	("100000030_124", "Fund pro testování #4", 2, "1920-01-01", "1935-12-31", "FPT", null, null, null, null),
+	("100000030_125", "Fund pro testování #5", 2, "1920-01-01", "1935-12-31", "FPT", null, null, null, NULL),
+   ("100000030_126", "Fund pro testování #6", 3, "1920-01-01", "1935-12-31", "FPT", null, null, null, null),
+   ("100000030_127", "Fund pro testování #7", 3, "1920-01-01", "1935-12-31", "FPT", null, null, null, null),
+   ("100000030_128", "Fund pro testování #8", 3, "1920-01-01", "1935-12-31", "FPT", null, null, null, NULL);
+
 -- DELETE FROM fund_thema;
 INSERT INTO fund_thema
 	(fund_id, thematic_group_id)
@@ -37,11 +37,11 @@ VALUES
 	(1, "Archivní pomůcka #1"),
 	(1, "Archivní pomůcka #2"),
 	(1, "Archivní pomůcka #3"),
-	(1, "Archivní pomůcka #4"),
-	(1, "Archivní pomůcka #5"),
-	(1, "Archivní pomůcka #6"),
-	(1, "Archivní pomůcka #7"),
-	(1, "Archivní pomůcka #8");
+	(2, "Archivní pomůcka #4"),
+	(2, "Archivní pomůcka #5"),
+	(3, "Archivní pomůcka #6"),
+	(3, "Archivní pomůcka #7"),
+	(4, "Archivní pomůcka #8");
 	
 -- DELETE FROM user;
 INSERT INTO user
@@ -56,9 +56,10 @@ INSERT INTO research_sheet
 VALUES
 	(null, 1, "rstype", null, null, "rsstate", null, 1),
 	(null, 1, "rstype", null, null, "rsstate", null, 1),
-	(null, 1, "rstype", null, null, "rsstate", null, 1),
-	(null, 1, "rstype", null, null, "rsstate", null, 1),
-	(null, 1, "rstype", null, null, "rsstate", null, 1),
-	(null, 1, "rstype", null, null, "rsstate", null, 1),
-	(null, 1, "rstype", null, null, "rsstate", null, 1),
-	(null, 1, "rstype", null, null, "rsstate", null, 1);
+	(NULL, 2, "rstype", null, null, "rsstate", null, 1),
+	(NULL, 2, "rstype", null, null, "rsstate", null, 1),
+	(NULL, 2, "rstype", null, null, "rsstate", null, 1),
+	(NULL, 3, "rstype", null, null, "rsstate", null, 1),
+	(NULL, 3, "rstype", null, null, "rsstate", null, 1),
+	(null, 3, "rstype", null, null, "rsstate", null, 1);
+	(null, 3, "rstype", null, null, "rsstate", null, 1);
