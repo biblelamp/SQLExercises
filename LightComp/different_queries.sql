@@ -26,4 +26,12 @@ ORDER BY 4 DESC
 
 -- Fondy s právě jedním tématem
 
+SELECT * FROM fund f
+	JOIN fund_thema ft ON f.fund_id = ft.fund_id
+GROUP BY f.fund_id
+HAVING COUNT(f.fund_id) = 1
+
+-- Výpis badatelských listů, které mají vazbu na fond, který není spravován archivem pro něž je badatelský list vydán
+
+
 
