@@ -28,7 +28,8 @@ VALUES
 -- DELETE FROM fund_thema;
 INSERT INTO fund_thema
 	(fund_id, thematic_group_id)
-VALUES (1, 43);
+VALUES
+	(1, 43), (2, 43), (2, 44);
 
 -- DELETE FROM finding_aid;
 INSERT INTO finding_aid
