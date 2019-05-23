@@ -64,3 +64,9 @@ VALUES
 	(NULL, 3, "rstype", null, null, "rsstate", null, 1),
 	(null, 3, "rstype", null, null, "rsstate", null, 1);
 	(null, 3, "rstype", null, null, "rsstate", null, 1);
+
+-- DELETE FROM accessible_fund;
+INSERT INTO accessible_fund
+	(research_sheet_id, fund_id)
+VALUE
+	(1, 1), (2, 4);
