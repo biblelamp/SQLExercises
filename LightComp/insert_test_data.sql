@@ -55,8 +55,8 @@ VALUES
 INSERT INTO research_sheet
 	(valid_to, archive_id, rstype, scope, legal_person, rsstate, approval_date, user_id)
 VALUES
-	(null, 1, "rstype", null, null, "rsstate", null, 1),
-	(null, 1, "rstype", null, null, "rsstate", null, 1),
+	(null, 1, "rstype", "výzkumu", null, "rsstate", null, 1),
+	(null, 1, "rstype", "výzkumu", null, "rsstate", null, 1),
 	(NULL, 2, "rstype", null, null, "rsstate", null, 1),
 	(NULL, 2, "rstype", null, null, "rsstate", null, 1),
 	(NULL, 2, "rstype", null, null, "rsstate", null, 1),
