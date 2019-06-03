@@ -33,20 +33,20 @@ VALUES
 
 -- DELETE FROM finding_aid;
 INSERT INTO finding_aid
-	(fund_id, name)
+	(fund_id, code, name)
 VALUES
-	(1, "Archivní pomůcka #1"),
-	(1, "Archivní pomůcka #2"),
-	(1, "Archivní pomůcka #3"),
-	(2, "Archivní pomůcka #4"),
-	(2, "Archivní pomůcka #5"),
-	(3, "Archivní pomůcka #6"),
-	(3, "Archivní pomůcka #7"),
-	(4, "Archivní pomůcka #8");
+	(1, "apn1", "Archivní pomůcka #1"),
+	(1, "apn2", "Archivní pomůcka #2"),
+	(1, "apn3", "Archivní pomůcka #3"),
+	(2, "apn4", "Archivní pomůcka #4"),
+	(2, "apn5", "Archivní pomůcka #5"),
+	(3, "apn6", "Archivní pomůcka #6"),
+	(3, "apn7", "Archivní pomůcka #7"),
+	(4, "apn8", "Archivní pomůcka #8");
 	
 -- DELETE FROM user;
 INSERT INTO user
-	(user, first_name, last_name, middle_name, birth_date, birth_place, address, delivery_address, citizenship, idcard_no, phone, email)
+	(user, first_name, last_name, maid_name, birth_date, birth_place, address, delivery_address, citizenship, idcard_no, phone, email)
 VALUES
 	("user", null, "LastName", null, null, null, null, null, null, null, null, NULL);
 
@@ -57,12 +57,12 @@ INSERT INTO research_sheet
 VALUES
 	(null, 1, "rstype", "výzkumu", null, "rsstate", null, 1),
 	(null, 1, "rstype", "výzkumu", null, "rsstate", null, 1),
-	(NULL, 2, "rstype", null, null, "rsstate", null, 1),
-	(NULL, 2, "rstype", null, null, "rsstate", null, 1),
-	(NULL, 2, "rstype", null, null, "rsstate", null, 1),
-	(NULL, 3, "rstype", null, null, "rsstate", null, 1),
-	(NULL, 3, "rstype", null, null, "rsstate", null, 1),
-	(null, 3, "rstype", null, null, "rsstate", null, 1);
+	(null, 2, "rstype", null, null, "rsstate", null, 1),
+	(null, 2, "rstype", null, null, "rsstate", null, 1),
+	(null, 2, "rstype", null, null, "rsstate", null, 1),
+	(null, 3, "rstype", null, null, "rsstate", null, 1),
+	(null, 3, "rstype", null, null, "rsstate", null, 1),
+	(null, 3, "rstype", null, null, "rsstate", null, 1),
 	(null, 3, "rstype", null, null, "rsstate", null, 1);
 
 -- DELETE FROM accessible_fund;
