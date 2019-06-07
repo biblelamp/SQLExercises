@@ -71,10 +71,10 @@ INSERT INTO accessible_fund
 VALUE
 	(1, 1), (2, 4);
 
--- DELETe FROM order;
-INSERT INTO order
-	(order_type, status, originator)
+-- DELETE FROM `order`;
+INSERT INTO `order`
+	(order_type, status, originator, fund, research_sheet_id)
 VALUE
-	("Metadata", "Probíhá zpracování", "Archiv ministerstva vnitra"),
-	("Metadata", "Probíhá zpracování", "Archiv ministerstva vnitra"),
-	("Metadata", "Zpracováno", "Archiv ministerstva vnitra")
+	("Metadata", "Probíhá zpracování", "Ministerstvo vnitra", "Fund pro testování #1", 1),
+	("Metadata", "Probíhá zpracování", "Ministerstvo vnitra", "Fund pro testování #2", 2),
+	("Metadata", "Zpracováno", "Ministerstvo vnitra", "Fund pro testování #3", 3);
