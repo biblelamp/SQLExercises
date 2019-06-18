@@ -4,26 +4,26 @@
 INSERT INTO archive
 	(code, name, local_name, archive_type, city, description, street, zipcode)
 VALUES
-	("100000030", "Archiv pro testování #1", "APT", "Archiv pro testování", "Praha 1", null, "Na Poříčí", "11000"),
-	("100000031", "Archiv pro testování #2", "APT", "Archiv pro testování", "Praha 1", null, "Na Poříčí", "11000"),
-	("100000032", "Archiv pro testování #3", "APT", "Archiv pro testování", "Praha 1", null, "Na Poříčí", "11000"),
-	("100000033", "Archiv pro testování #4", "APT", "Archiv pro testování", "Praha 1", null, "Na Poříčí", "11000"),
-	("100000034", "Archiv pro testování #5", "APT", "Archiv pro testování", "Praha 1", null, "Na Poříčí", "11000");
+	("100000030", "Archiv ministerstva vnitra", "APT", "Archiv pro testování", "Praha 1", null, null, "11000"),
+	("100000031", "Archiv pro testování #2", "APT", "Archiv pro testování", "Praha 1", null, null, "11000"),
+	("100000032", "Archiv pro testování #3", "APT", "Archiv pro testování", "Praha 1", null, null, "11000"),
+	("100000033", "Archiv pro testování #4", "APT", "Archiv pro testování", "Praha 1", null, null, "11000"),
+	("100000034", "Archiv pro testování #5", "APT", "Archiv pro testování", "Praha 1", null, null, "11000");
 
 
 -- DELETE FROM fund;
 INSERT INTO fund
 	(code, name, archive_id, period_from, period_to, internal_code, status, accessibility, fund_size, conservation_status)
 VALUES
-   ("100000010_352", "Administrace celních důchodků Praha", 1, "1805-01-01", "1830-12-31", "ACD", "Archivní soubory v přímé péči instituce, uložené v instituci", "Přístupný", "4,25 bm zpracováno (z toho 4,25 bm inventarizováno), 2,25 bm nezpracováno", "úplný"),
-	("100000030_121", "Fund pro testování #1", 1, "1920-01-01", "1935-12-31", "FPT", null, null, null, null),
+   -- ("100000010_352", "Administrace celních důchodků Praha", 1, "1805-01-01", "1830-12-31", "ACD", "Archivní soubory v přímé péči instituce, uložené v instituci", "Přístupný", "4,25 bm zpracováno (z toho 4,25 bm inventarizováno), 2,25 bm nezpracováno", "úplný"),
+	("100000030_121", "Ministr vnitra Josef Kalamár", 1, "1920-01-01", "1935-12-31", "FPT", null, null, null, null),
 	("100000030_122", "Fund pro testování #2", 1, "1920-01-01", "1935-12-31", "FPT", null, null, null, null),
 	("100000030_123", "Fund pro testování #3", 2, "1920-01-01", "1935-12-31", "FPT", null, null, null, null),
 	("100000030_124", "Fund pro testování #4", 2, "1920-01-01", "1935-12-31", "FPT", null, null, null, null),
 	("100000030_125", "Fund pro testování #5", 2, "1920-01-01", "1935-12-31", "FPT", null, null, null, NULL),
    ("100000030_126", "Fund pro testování #6", 3, "1920-01-01", "1935-12-31", "FPT", null, null, null, null),
    ("100000030_127", "Fund pro testování #7", 3, "1920-01-01", "1935-12-31", "FPT", null, null, null, null),
-   ("100000030_128", "Fund pro testování #8", 3, "1920-01-01", "1935-12-31", "FPT", null, null, null, NULL);
+   ("100000030_128", "Fund pro testování #8", 3, "1920-01-01", "1935-12-31", "FPT", null, null, null, null);
 
 -- DELETE FROM fund_thema;
 INSERT INTO fund_thema
@@ -48,7 +48,7 @@ VALUES
 INSERT INTO user
 	(user, first_name, last_name, maid_name, birth_date, birth_place, address, delivery_address, citizenship, idcard_no, phone, email)
 VALUES
-	("user", null, "LastName", null, null, null, null, null, null, null, null, NULL);
+	("user", null, "LastName", null, null, null, null, null, null, null, null, null);
 
 
 -- DELETE FROM research_sheet;
