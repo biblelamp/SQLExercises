@@ -48,7 +48,7 @@ VALUES
 INSERT INTO user
 	(user, first_name, last_name, maid_name, birth_date, birth_place, address, delivery_address, citizenship, idcard_no, phone, email)
 VALUES
-	("user", null, "LastName", null, null, null, null, null, null, null, null, null);
+	("user", null, "LastName", NULL, "1990-09-09", null, null, null, null, null, null, null);
 
 
 -- DELETE FROM research_sheet;
@@ -73,8 +73,6 @@ VALUE
 
 -- DELETE FROM `order`;
 INSERT INTO `order`
-	(order_type, status, originator, fund, research_sheet_id)
+	(order_type, status, originator, prejimkaCode, fund_id, research_sheet_id, created)
 VALUE
-	("Metadata", "Probíhá zpracování", "Ministerstvo vnitra", "Fund pro testování #1", 1),
-	("Metadata", "Probíhá zpracování", "Ministerstvo vnitra", "Fund pro testování #2", 2),
-	("Metadata", "Zpracováno", "Ministerstvo vnitra", "Fund pro testování #3", 3);
+	("METADATA", "NEW", "Ministerstvo vnitra", "123", 1, 1, "2019-06-20");
