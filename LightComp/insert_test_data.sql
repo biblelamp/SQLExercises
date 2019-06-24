@@ -48,12 +48,12 @@ VALUES
 INSERT INTO user
 	(user, first_name, last_name, maid_name, birth_date, birth_place, address, delivery_address, citizenship, idcard_no, phone, email)
 VALUES
-	("user", null, "LastName", NULL, "1990-09-09", null, null, null, null, null, null, null);
+	("sergey", null, "LastName", NULL, "1990-09-09", null, null, null, null, null, null, null);
 
 
 -- DELETE FROM research_sheet;
 INSERT INTO research_sheet
-	(valid_to, archive_id, rstype, scope, legal_person, rsstate, approval_date, user_id)
+	(valid_to, archive_id, rsstate, scope, legal_person, rstypearchive, approval_date, user_id)
 VALUES
 	(null, 1, "NEW", "výzkumu", null, "rsstate", null, 1),
 	(null, 1, "NEW", "výzkumu", null, "rsstate", null, 1),
