@@ -48,22 +48,15 @@ VALUES
 INSERT INTO user
 	(user, first_name, last_name, maid_name, birth_date, birth_place, address, delivery_address, citizenship, idcard_no, phone, email)
 VALUES
-	("sergey", null, "LastName", NULL, "1990-09-09", null, null, null, null, null, null, null);
+	("sergey", null, "Sergey", NULL, "1965-12-29", null, null, null, null, null, null, null);
 
 
 -- DELETE FROM research_sheet;
 INSERT INTO research_sheet
-	(valid_to, archive_id, rsstate, scope, legal_person, rstypearchive, approval_date, user_id)
+	(valid_to, archive_id, rsstate, scope, legal_person, rstype, approval_date, user_id)
 VALUES
-	(null, 1, "NEW", "výzkumu", null, "rsstate", null, 1),
-	(null, 1, "NEW", "výzkumu", null, "rsstate", null, 1),
-	(null, 2, "VALID", null, null, "rsstate", null, 1),
-	(null, 2, "VALID", null, null, "rsstate", null, 1),
-	(null, 2, "VALID", null, null, "rsstate", null, 1),
-	(null, 3, "VALID", null, null, "rsstate", null, 1),
-	(null, 3, "VALID", null, null, "rsstate", null, 1),
-	(null, 3, "VALID", null, null, "rsstate", null, 1),
-	(null, 3, "VALID", null, null, "rsstate", null, 1);
+	("2019-10-03", 1, "NEW", "výzkumu", null, "PRIVATE", null, 1),
+	("2019-10-03", 2, "NEW", "výzkumu", null, "PRIVATE", null, 1);
 
 -- DELETE FROM accessible_fund;
 INSERT INTO accessible_fund
@@ -73,6 +66,12 @@ VALUE
 
 -- DELETE FROM `order`;
 INSERT INTO `order`
-	(order_type, status, originator, prejimkaCode, fund_id, research_sheet_id, created)
+	(order_type, status, originator, fund_id, research_sheet_id, created)
 VALUE
-	("METADATA", "NEW", "Ministerstvo vnitra", "123", 1, 1, "2019-06-20");
+	("METADATA", "NEW", "Ministerstvo vnitra", 1, 1, "2019-06-20");
+
+-- DELETE FROM query;
+INSERT INTO query
+	(order_id, created, state, type)
+VALUE
+	(1, "2019-07-10", "RUNNING", "QUERY");
