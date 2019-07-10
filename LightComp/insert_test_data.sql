@@ -71,7 +71,19 @@ VALUE
 	("METADATA", "NEW", "Ministerstvo vnitra", 1, 1, "2019-06-20");
 
 -- DELETE FROM query;
-INSERT INTO query
+INSERT INTO `query`
 	(order_id, created, state, type)
 VALUE
 	(1, "2019-07-10", "RUNNING", "QUERY");
+
+-- DELETE FROM information_package;
+INSERT INTO information_package
+	(order_id, uuid, path, size)
+VALUES
+	(1, "1234567890abcdef", "path/to", 1024);
+
+-- DELETE FROM dao;
+INSERT INTO dao
+	(information_package_id, filename, mimetype, size, position)
+VALUES
+	(1, "filename.txt", "plain/text", 1024, 1);
