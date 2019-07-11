@@ -66,9 +66,9 @@ VALUE
 
 -- DELETE FROM `order`;
 INSERT INTO `order`
-	(order_type, status, originator, fund_id, research_sheet_id, created)
+	(order_id, order_type, status, originator, fund_id, research_sheet_id, path, created)
 VALUE
-	("METADATA", "NEW", "Ministerstvo vnitra", 1, 1, "2019-06-20");
+	(1, "METADATA", "NEW", "Ministerstvo vnitra", 1, 1, "path", "2019-06-20");
 
 -- DELETE FROM query;
 INSERT INTO `query`
@@ -76,14 +76,38 @@ INSERT INTO `query`
 VALUE
 	(1, "2019-07-10", "RUNNING", "QUERY");
 
--- DELETE FROM information_package;
-INSERT INTO information_package
-	(order_id, uuid, path, size)
+-- DELETE FROM downloadable_file;
+INSERT INTO downloadable_file
+	(order_id, mimetype, created, filename, size, description)
 VALUES
-	(1, "1234567890abcdef", "path/to", 1024);
+	(1, "text/plain", "2019-07-11", "filename.txt", 1024, "file");
+
+-- DELETE FROM `event`
+INSERT INTO `event`
+	(queue_name, category_name, state, inserted, order_id)
+VALUES
+	("delete", "1", "PRIPRAVENA", "2019-07-10", 1);
 
 -- DELETE FROM dao;
 INSERT INTO dao
 	(information_package_id, filename, mimetype, size, position)
 VALUES
 	(1, "filename.txt", "plain/text", 1024, 1);
+
+-- DELETE FROM information_package;
+INSERT INTO information_package
+	(information_package_id, order_id, uuid, path, size)
+VALUES
+	(1, 1, "1234567890abcdef", "path/to", 1024);
+
+-- DELETE FROM level
+INSERT INTO `level`
+	(order_id, information_package_id, description, position, depth, leaf)
+VALUE
+	(1, 1, "description", 1, 1, 1);
+
+-- DELETE FROM level_view
+INSERT INTO level_view
+	(order_id, depth, leaf, hidden, description, position, type)
+VALUE
+	(1, 1, 1, 0, "description", 1, "type");
