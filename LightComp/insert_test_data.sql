@@ -66,9 +66,9 @@ VALUE
 
 -- DELETE FROM `order`;
 INSERT INTO `order`
-	(order_id, order_type, status, originator, fund_id, research_sheet_id, path, created)
+	(order_id, order_type, status, originator, fund_id, research_sheet_id, path, created, `delete`)
 VALUE
-	(1, "METADATA", "NEW", "Ministerstvo vnitra", 1, 1, "path", "2019-06-20");
+	(1, "METADATA", "NEW", "Ministerstvo vnitra", 1, 1, "path", "2019-06-20", false);
 
 -- DELETE FROM query;
 INSERT INTO `query`
