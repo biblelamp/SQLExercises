@@ -55,7 +55,7 @@ VALUES
 INSERT INTO research_sheet
 	(valid_to, archive_id, rsstate, scope, legal_person, rstype, approval_date, user_id)
 VALUES
-	("2019-10-03", 1, "NEW", "výzkumu", null, "PRIVATE", null, 1),
+	("2019-10-03", 1, "VALID", "výzkumu", null, "PRIVATE", null, 1),
 	("2019-10-03", 2, "NEW", "výzkumu", null, "PRIVATE", null, 1);
 
 -- DELETE FROM accessible_fund;
