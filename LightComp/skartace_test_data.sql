@@ -1,8 +1,8 @@
 -- DELETE FROM rizeni;
 INSERT INTO rizeni
-	(rizeni_id, typ, stav, cesta, cas_zalozeni, archiv_kod, archiv_nazev, puvodce_id, puvodce_nazev)
+	(rizeni_id, typ, stav, cesta, cas_zalozeni, archiv_kod, archiv_nazev, puvodce_id, puvodce_nazev, smazat)
 VALUE
-	(1, "typ", "stav", "cesta", "2019-07-17", "1", "archiv", "1", "puvodce");
+	(1, "VOLNA", "VYTVORENA", "C:\temp", "2019-07-17", "1", "archiv", "1", "puvodce", 0);
 
 -- DELETE FROM informacni_balicek;
 INSERT INTO informacni_balicek
@@ -20,7 +20,7 @@ VALUE
 INSERT INTO zobrazeni_urovne
 	(zobrazeni_urovne_id, rizeni_id, informacni_balicek_id, popis_urovne_id, hloubka, list, nazev_urovne, poradi, typ, zamek)
 VALUE
-	(1, 1, 1, 1, 1, 0, "nazev", 1, "KOMPONENTA", 0);
+	(1, 1, 1, 1, 1, 0, "nazev", 1, "ZDROJ", 0);
 	
 -- DELETE FROM uroven_popisu;
 INSERT INTO uroven_popisu
@@ -34,10 +34,17 @@ INSERT INTO digitalni_objekt
 VALUES
 	(1, 1, 1, 1, "file", "text", 1, 0);
 	
+-- TEST InputFiles
+
+INSERT INTO `event`
+	(event_id, queue_name, category_name, operation, state, inserted, CONTEXT, rizeni_id)
+VALUES
+	(1, "input", "category_name", "files", "PRIPRAVENA", CURRENT_TIMESTAMP, "1", 1);
+
 -- SELECT RECORDS
 
 SELECT * FROM digitalni_objekt dao
-	JOIN zobrazeni_urovne zu on zu.zobrazeni_urovne_id = dao.zobrazeni_urovne_id
+	INNER JOIN zobrazeni_urovne zu ON zu.zobrazeni_urovne_id = dao.zobrazeni_urovne_id
 	WHERE zu.zobrazeni_urovne_id = 1;
 	
 -- DELETE RECORDS
