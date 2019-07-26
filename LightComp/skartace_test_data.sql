@@ -41,6 +41,13 @@ INSERT INTO `event`
 VALUES
 	(1, "input", "category_name", "files", "PRIPRAVENA", CURRENT_TIMESTAMP, "1", 1);
 
+-- TEST DELETE balicek
+
+INSERT INTO `event`
+	(event_id, queue_name, category_name, operation, state, inserted, CONTEXT, rizeni_id, informacni_balicek_id)
+VALUES
+	(1, "delete", "category_name", "delete_package", "PRIPRAVENA", CURRENT_TIMESTAMP, "1", 1, 1);
+
 -- SELECT RECORDS
 
 SELECT * FROM digitalni_objekt dao
