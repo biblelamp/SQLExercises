@@ -54,6 +54,11 @@ SELECT * FROM digitalni_objekt dao
 	INNER JOIN zobrazeni_urovne zu ON zu.zobrazeni_urovne_id = dao.zobrazeni_urovne_id
 	WHERE zu.zobrazeni_urovne_id = 1;
 	
+SELECT COUNT(*) FROM zobrazeni_urovne zu
+	WHERE zu.typ IN ('VECNA_SKUPINA', 'DOKUMENT', 'SPIS')
+	AND (zu.rozhodnuti = 'V' OR zu.rozhodnuti IS NULL)
+	AND rizeni_id = 1
+
 -- DELETE RECORDS
 
 -- DELETE Dao
