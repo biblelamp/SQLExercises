@@ -59,6 +59,19 @@ SELECT COUNT(*) FROM zobrazeni_urovne zu
 	AND (zu.rozhodnuti = 'V' OR zu.rozhodnuti IS NULL)
 	AND rizeni_id = 1
 
+SELECT * FROM (
+	SELECT * FROM rizeni
+		WHERE archiv_nazev LIKE '%ar1c%'
+	UNION DISTINCT
+	SELECT r.* FROM rizeni r
+	   JOIN opravneni o ON r.rizeni_id = o.opravneni_id
+	   WHERE r.rizeni_id = 2
+) x
+
+SELECT * FROM rizeni r
+   JOIN opravneni o ON r.rizeni_id = o.opravneni_id
+	WHERE r.archiv_nazev LIKE '%arc%'
+
 -- DELETE RECORDS
 
 -- DELETE Dao
