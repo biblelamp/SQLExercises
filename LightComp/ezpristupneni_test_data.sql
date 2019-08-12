@@ -53,10 +53,11 @@ VALUES
 
 -- DELETE FROM research_sheet;
 INSERT INTO research_sheet
-	(valid_to, archive_id, rsstate, scope, legal_person, rstype, approval_date, user_id)
+	(valid_to, archive_id, rstype, scope, legal_person, rsstate, approval_date, user_id)
 VALUES
-	("2019-10-03", 1, "VALID", "výzkumu", null, "PRIVATE", null, 1),
-	("2019-10-03", 2, "NEW", "výzkumu", null, "PRIVATE", null, 1);
+   (null, null, "PRIVATE", null, null, "VALID", null, 1),
+	("2019-10-03", 1, "PRIVATE", null, null, "VALID", null, 1),
+	("2019-10-03", 2, "PRIVATE", null, null, "NEW", null, 1);
 
 -- DELETE FROM accessible_fund;
 INSERT INTO accessible_fund
@@ -66,9 +67,10 @@ VALUE
 
 -- DELETE FROM `order`;
 INSERT INTO `order`
-	(order_id, order_type, status, originator, fund_id, research_sheet_id, path, created, `delete`)
+	(order_type, status, originator, fund_id, research_sheet_id, path, created, to_delete)
 VALUE
-	(1, "METADATA", "NEW", "Ministerstvo vnitra", 1, 1, "path", "2019-06-20", false);
+   ("AIP", "PROCESSED", null, null, 1, null, "2019-08-12", null),
+	("METADATA", "NEW", "Ministerstvo vnitra", 1, 1, "path", "2019-08-12", false);
 
 -- DELETE FROM query;
 INSERT INTO `query`
@@ -90,9 +92,10 @@ VALUES
 
 -- DELETE FROM level_view
 INSERT INTO level_view
-	(level_view_id, order_id, information_package_id, depth, leaf, hidden, description, position, type)
+	(order_id, information_package_id, depth, leaf, hidden, description, position, type)
 VALUE
-	(1, 1, 1, 1, 1, 0, "description", 1, "type");
+	(1, null, 1, 1, 0, "description", 1, "type"),
+	(1, 1, 1, 1, 0, "description", 1, "type");
 
 -- DELETE FROM level
 INSERT INTO `level`
