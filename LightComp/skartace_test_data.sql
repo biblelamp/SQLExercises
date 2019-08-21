@@ -41,6 +41,11 @@ INSERT INTO `event`
 VALUES
 	(1, "input", "category_name", "files", "PRIPRAVENA", CURRENT_TIMESTAMP, "1", 1);
 
+INSERT INTO `event`
+	(queue_name, category_name, state, inserted, informacni_balicek_id)
+VALUES
+	("zip", "zip_package", "PRIPRAVENA", CURRENT_TIMESTAMP, 1);
+
 -- TEST DELETE balicek
 
 INSERT INTO `event`
