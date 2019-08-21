@@ -41,6 +41,8 @@ INSERT INTO `event`
 VALUES
 	(1, "input", "category_name", "files", "PRIPRAVENA", CURRENT_TIMESTAMP, "1", 1);
 
+-- TEST ZipProcessor
+
 INSERT INTO `event`
 	(queue_name, category_name, state, inserted, informacni_balicek_id)
 VALUES
