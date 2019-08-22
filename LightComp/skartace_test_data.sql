@@ -44,9 +44,18 @@ VALUES
 -- TEST ZipProcessor
 
 INSERT INTO `event`
-	(queue_name, category_name, state, inserted, informacni_balicek_id)
+	(queue_name, category_name, state, inserted, rizeni_id, informacni_balicek_id)
 VALUES
-	("zip", "zip_package", "PRIPRAVENA", CURRENT_TIMESTAMP, 1);
+	("zip", "zip_package", "PRIPRAVENA", CURRENT_TIMESTAMP, 4, 1);
+	
+-- TEST FOR zipPackages
+
+SELECT COUNT(*)
+FROM
+	informacni_balicek
+WHERE
+	informacni_balicek_id IN (1, 2, 3)
+GROUP BY rizeni_id
 
 -- TEST DELETE balicek
 
