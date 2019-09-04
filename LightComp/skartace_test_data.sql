@@ -87,6 +87,21 @@ SELECT * FROM (
 SELECT * FROM rizeni r
    JOIN opravneni o ON r.rizeni_id = o.opravneni_id
 	WHERE r.archiv_nazev LIKE '%arc%'
+	
+-- SELECT LevelView (1+1)
+
+SELECT * FROM zobrazeni_urovne
+WHERE rizeni_id = 3 AND informacni_balicek_id = 5
+
+-- +
+
+SELECT * FROM zobrazeni_urovne zu
+WHERE zu.rizeni_id = 3 AND zu.rodic_id = 466
+
+-- =
+
+SELECT * FROM zobrazeni_urovne
+WHERE rodic_id IN (SELECT zobrazeni_urovne_id FROM zobrazeni_urovne WHERE rizeni_id = 3 AND informacni_balicek_id = 5)
 
 -- DELETE RECORDS
 
