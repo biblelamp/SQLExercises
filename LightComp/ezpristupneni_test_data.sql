@@ -48,7 +48,7 @@ VALUES
 INSERT INTO user
 	(user, first_name, last_name, maid_name, birth_date, birth_place, address, delivery_address, citizenship, idcard_no, phone, email)
 VALUES
-	("sergey", null, "Sergey", NULL, "1965-12-29", null, null, null, null, null, null, null);
+	("sergey", null, "Sergey", null, "1965-12-29", null, null, null, null, null, null, null);
 
 
 -- DELETE FROM research_sheet;
@@ -69,8 +69,8 @@ VALUE
 INSERT INTO `order`
 	(order_type, status, originator, fund_id, research_sheet_id, path, created, to_delete)
 VALUE
-   ("AIP", "PROCESSED", null, null, 1, null, "2019-08-12", null),
-	("METADATA", "NEW", "Ministerstvo vnitra", 1, 1, "path", "2019-08-12", false);
+   ("AIP", "PROCESSED", null, null, 1, null, CURRENT_DATE, null),
+	("METADATA", "NEW", "Ministerstvo vnitra", 1, 1, "path", CURRENT_DATE, false);
 
 -- DELETE FROM query;
 INSERT INTO `query`
@@ -82,7 +82,7 @@ VALUE
 INSERT INTO downloadable_file
 	(order_id, mimetype, created, filename, size, description)
 VALUES
-	(1, "text/plain", "2019-07-11", "filename.txt", 1024, "file");
+	(1, "text/plain", CURRENT_DATE, "filename.txt", 1024, "file");
 
 -- DELETE FROM information_package;
 INSERT INTO information_package
@@ -113,4 +113,4 @@ VALUES
 INSERT INTO `event`
 	(queue_name, category_name, state, inserted, order_id)
 VALUES
-	("delete", "1", "PRIPRAVENA", "2019-07-10", 1);
+	("delete", "1", "PRIPRAVENA", CURRENT_DATE, 1);
