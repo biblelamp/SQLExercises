@@ -46,14 +46,15 @@ VALUES
 	
 -- DELETE FROM user;
 INSERT INTO user
-	(user, first_name, last_name, maid_name, birth_date, birth_place, address, delivery_address, citizenship, idcard_no, phone, email)
+	(user, first_name, last_name, maid_name, birth_date, birth_place, address, delivery_address, citizenship, idcard_no, phone, email, verified, verified_date)
 VALUES
-	("sergey", null, "Sergey", null, "1965-12-29", null, null, null, null, null, null, null);
+	("sergey", null, "Sergey", null, "1965-12-29", null, null, null, null, null, null, null, 1, CURRENT_DATE);
 
 
 -- DELETE FROM research_sheet;
 INSERT INTO research_sheet
-	(valid_to, archive_id, rstype, scope, legal_person, rsstate, approval_date, user_id)
+	(valid_to, archive_id, rstype, scope, legal_person, rsstate, approval_date, user_id,
+		scientific_work, scientific_edition, genealogy, private_education, collector_research, publication, exhibition, administrative, chronicle)
 VALUES
    (null, null, "PRIVATE", null, null, "VALID", null, 1),
 	("2019-10-03", 1, "PRIVATE", null, null, "VALID", null, 1),
