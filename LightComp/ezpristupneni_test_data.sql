@@ -56,9 +56,9 @@ INSERT INTO research_sheet
 	(valid_to, archive_id, rstype, scope, legal_person, rsstate, approval_date, user_id,
 		scientific_work, scientific_edition, genealogy, private_education, collector_research, publication, exhibition, administrative, chronicle)
 VALUES
-   (null, null, "PRIVATE", null, null, "VALID", null, 1),
-	("2019-10-03", 1, "PRIVATE", null, null, "VALID", null, 1),
-	("2019-10-03", 2, "PRIVATE", null, null, "NEW", null, 1);
+   (null, null, "PRIVATE", null, null, "VALID", NULL, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+	("2019-10-03", 1, "PRIVATE", null, null, "VALID", NULL, 1,  1, 1, 1, 1, 1, 1, 1, 1, 1),
+	("2019-10-03", 2, "PRIVATE", null, null, "NEW", NULL, 1,  1, 1, 1, 1, 1, 1, 1, 1, 1);
 
 -- DELETE FROM accessible_fund;
 INSERT INTO accessible_fund
