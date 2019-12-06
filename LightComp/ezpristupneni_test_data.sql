@@ -115,3 +115,9 @@ INSERT INTO `event`
 	(queue_name, category_name, state, inserted, order_id)
 VALUES
 	("delete", "1", "PRIPRAVENA", CURRENT_DATE, 1);
+
+-- DELETE FROM cart_item
+INSERT INTO cart_item
+	(level_view_id, order_id)
+VALUES
+	(1, 1);
