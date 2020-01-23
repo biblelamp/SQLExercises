@@ -34,6 +34,13 @@ INSERT INTO digitalni_objekt
 VALUES
 	(1, 1, 1, 1, "file", "text", 1, 0);
 	
+-- TEST FinalizedService.generateCsvReportSip
+
+INSERT INTO `event`
+	(queue_name, category_name, operation, state, inserted, CONTEXT, rizeni_id)
+VALUES
+	("finalized", "validation_report_1", "generateValidationReport", "PRIPRAVENA", CURRENT_TIMESTAMP, "1", 1);
+
 -- TEST InputFiles
 
 INSERT INTO `event`
