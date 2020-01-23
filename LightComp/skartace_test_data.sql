@@ -37,9 +37,16 @@ VALUES
 -- TEST FinalizedService.generateCsvReportSip
 
 INSERT INTO `event`
-	(queue_name, category_name, operation, state, inserted, CONTEXT, rizeni_id)
+	(queue_name, category_name, operation, state, inserted, context, rizeni_id)
 VALUES
 	("finalized", "validation_report_1", "generateValidationReport", "PRIPRAVENA", CURRENT_TIMESTAMP, "1", 1);
+
+-- TEST ExcelReportService.updateSelection
+
+INSERT INTO `event`
+	(queue_name, category_name, operation, state, inserted, rizeni_id)
+VALUES
+	("editor", "update_result_1.xlsx", "UPDATE_RESULT", "PRIPRAVENA", CURRENT_TIMESTAMP, 1);
 
 -- TEST InputFiles
 
