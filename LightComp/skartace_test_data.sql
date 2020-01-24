@@ -48,13 +48,20 @@ INSERT INTO `event`
 VALUES
 	("editor", "update_result_1.xlsx", "UPDATE_RESULT", "PRIPRAVENA", CURRENT_TIMESTAMP, 1);
 
+--- TEST NotificationService.creatInformationFilled
+
+INSERT INTO `event`
+	(queue_name, category_name, operation, state, inserted, rizeni_id)
+VALUES
+	("cro", "send_1", "INFORMACE_DOPLNENY", "PRIPRAVENA", CURRENT_TIMESTAMP, 1);
+
 -- TEST InputFiles
 
 INSERT INTO `event`
 	(event_id, queue_name, category_name, operation, state, inserted, CONTEXT, rizeni_id)
 VALUES
 	(1, "input", "category_name", "files", "PRIPRAVENA", CURRENT_TIMESTAMP, "1", 1);
-
+	
 -- TEST ZipProcessor
 
 INSERT INTO `event`
