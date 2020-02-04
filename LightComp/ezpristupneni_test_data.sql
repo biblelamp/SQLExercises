@@ -48,7 +48,8 @@ VALUES
 INSERT INTO user
 	(user, first_name, last_name, maid_name, birth_date, birth_place, address, delivery_address, citizenship, idcard_no, phone, email, verified, verified_date)
 VALUES
-	("sergey", null, "Sergey", null, "1965-12-29", null, null, null, null, null, null, null, 1, CURRENT_DATE);
+	("sergey", null, "Sergey", null, "1965-12-29", null, null, null, null, null, null, null, 1, CURRENT_DATE),
+	("karel", null, "Karel", null, "1965-12-29", null, null, null, null, null, null, null, 1, CURRENT_DATE),;
 
 
 -- DELETE FROM research_sheet;
