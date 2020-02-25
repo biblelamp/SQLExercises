@@ -160,3 +160,11 @@ INSERT INTO uzivatel
 VALUE
 	("piter", "piter@email.cz", 1),
 	("karel", "karel@email.cz", 2)
+
+-- DELETE FROM role_uzivatele;
+INSERT INTO role_uzivatele
+	(uzivatel_id, kod_role)
+VALUES
+	(1, "ADMIN"),
+	(1, "VEDOUCI"),
+	(2, "ADMIN")
