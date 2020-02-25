@@ -146,3 +146,17 @@ DELETE FROM informacni_balicek WHERE rizeni_id = 1;
 
 -- DELETE Skartace
 DELETE FROM rizeni WHERE rizeni_id = 1;
+
+-- DELETE FROM osoba;
+INSERT INTO osoba
+	(entita_id, pref_name)
+VALUE
+	("piter", "Piter"),
+	("karel", "Karel")
+
+-- DELETE from uzivatel;
+INSERT INTO uzivatel
+	(user, email, osoba_id)
+VALUE
+	("piter", "piter@email.cz", 1),
+	("karel", "karel@email.cz", 2)
