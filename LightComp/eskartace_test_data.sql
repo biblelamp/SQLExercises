@@ -152,14 +152,17 @@ INSERT INTO osoba
 	(entita_id, pref_name)
 VALUE
 	("piter", "Piter"),
-	("karel", "Karel")
+	("karel", "Karel"),
+	("sergey", "Sergey"),
+	("firma", "Firma")
 
 -- DELETE from uzivatel;
 INSERT INTO uzivatel
 	(user, email, osoba_id)
 VALUE
 	("piter", "piter@email.cz", 1),
-	("karel", "karel@email.cz", 2)
+	("karel", "karel@email.cz", 2),
+	("sergey", "sergey@email.cz", 3)
 
 -- DELETE FROM role_uzivatele;
 INSERT INTO role_uzivatele
@@ -167,4 +170,11 @@ INSERT INTO role_uzivatele
 VALUES
 	(1, "ADMIN"),
 	(1, "VEDOUCI"),
-	(2, "ADMIN")
+	(2, "PREDAVAJICI")
+	
+-- DELETE FROM role_osoba;
+INSERT INTO role_osoba
+	(osoba_id, role_uzivatele_id)
+VALUES
+   (2, 3),
+   (3, 3)
