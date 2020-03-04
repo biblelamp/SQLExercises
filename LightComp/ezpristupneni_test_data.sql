@@ -49,17 +49,16 @@ INSERT INTO user
 	(user, first_name, last_name, maid_name, birth_date, birth_place, address, delivery_address, citizenship, idcard_no, phone, email, verified, verified_date)
 VALUES
 	("sergey", null, "Sergey", null, "1965-12-29", null, null, null, null, null, null, null, 1, CURRENT_DATE),
-	("karel", null, "Karel", null, "1965-12-29", null, null, null, null, null, null, null, 1, CURRENT_DATE),;
-
+	("karel", null, "Karel", null, "1965-12-29", null, null, null, null, null, null, null, 1, CURRENT_DATE);
 
 -- DELETE FROM research_sheet;
 INSERT INTO research_sheet
 	(valid_to, archive_id, rstype, scope, legal_person, rsstate, approval_date, user_id,
 		scientific_work, scientific_edition, genealogy, private_education, collector_research, publication, exhibition, administrative, chronicle)
 VALUES
-   (null, null, "PRIVATE", null, null, "VALID", NULL, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
-	("2019-10-03", 1, "PRIVATE", null, null, "VALID", NULL, 1,  1, 1, 1, 1, 1, 1, 1, 1, 1),
-	("2019-10-03", 2, "PRIVATE", null, null, "NEW", NULL, 1,  1, 1, 1, 1, 1, 1, 1, 1, 1);
+   ("2020-10-02", 1, "PRIVATE", null, null, "VALID", NULL, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+	("2020-10-02", 2, "PRIVATE", null, null, "VALID", NULL, 1,  1, 1, 1, 1, 1, 1, 1, 1, 1),
+	("2020-10-03", 3, "PRIVATE", null, null, "NEW", NULL, 1,  1, 1, 1, 1, 1, 1, 1, 1, 1);
 
 -- DELETE FROM accessible_fund;
 INSERT INTO accessible_fund
@@ -71,7 +70,7 @@ VALUE
 INSERT INTO `order`
 	(order_type, status, originator, fund_id, research_sheet_id, path, created, to_delete)
 VALUE
-   ("AIP", "PROCESSED", null, null, 1, null, CURRENT_DATE, null),
+   ("AIP", "PROCESSED", NULL, 1, 1, null, CURRENT_DATE, false),
 	("METADATA", "NEW", "Ministerstvo vnitra", 1, 1, "path", CURRENT_DATE, false);
 
 -- DELETE FROM query;
