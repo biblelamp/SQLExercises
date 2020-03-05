@@ -68,10 +68,10 @@ VALUE
 
 -- DELETE FROM `order`;
 INSERT INTO `order`
-	(order_type, status, originator, fund_id, research_sheet_id, path, created, to_delete)
+	(order_type, status, originator, research_sheet_id, fund_id, path, created, to_delete)
 VALUE
    ("AIP", "PROCESSED", NULL, 1, 1, null, CURRENT_DATE, false),
-	("METADATA", "NEW", "Ministerstvo vnitra", 1, 1, "path", CURRENT_DATE, false);
+	("METADATA", "NEW", "Ministerstvo vnitra", 2, 1, "path", CURRENT_DATE, false);
 
 -- DELETE FROM query;
 INSERT INTO `query`
