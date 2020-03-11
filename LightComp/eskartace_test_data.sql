@@ -178,3 +178,9 @@ INSERT INTO role_osoba
 VALUES
    (2, 3),
    (3, 3)
+
+-- DELETE FROM zarazeni;
+INSERT INTO zarazeni
+	(pecujici_archiv, pecujici_archiv_id, archivni_fond_cislo, cislo_vnejsi_zmeny, rizeni_id, puvodce_osoba_id)
+VALUES
+	("123", "456", "789", "0ab", 1, 1)
