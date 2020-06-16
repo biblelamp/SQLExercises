@@ -1,6 +1,9 @@
 # SQLExercises
 My exercises with SQL
 
+## SQL Interactive Tutorial (RU)
+http://sql-tutorial.ru/ru
+
 ## Visual explanation of JOINs in SQL (RU)
 http://vas3k.ru/blog/97/
 
