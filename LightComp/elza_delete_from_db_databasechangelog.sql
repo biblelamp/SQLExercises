@@ -1,0 +1,1 @@
+delete from db_databasechangelog where id=''
