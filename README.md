@@ -12,3 +12,6 @@ http://www.tutorialspoint.com/sqlite/sqlite_java.htm
 
 ## SQL programming: the most comprehensive video course (RU)
 https://techrocks.ru/2018/06/28/sql-programming-video-course/
+
+## Diving into PostgreSQL indexes (RU)
+https://habr.com/ru/companies/otus/articles/747882/
